@@ -45,7 +45,7 @@ func ResourceAutomationServer() *schema.Resource {
 				Type:     schema.TypeMap,
 				Optional: true,
 			},
-			constants.DOWNLOAD_FILE_PATH: {
+			constants.DOWNLOAD_FILE_PATH_AUTOMATION: {
 				Type:     schema.TypeString,
 				Optional: true,
 			},
@@ -71,7 +71,7 @@ func resourceAutomationServerDelete(d *schema.ResourceData, m interface{}) error
 	return nil
 }
 
-//TODO: cleanup to be done
+// TODO: cleanup to be done
 func resourceAutomationServerCreate(d *schema.ResourceData, m interface{}) error {
 
 	configAppViewXEnvironment := m.(*config.AppViewXEnvironment)

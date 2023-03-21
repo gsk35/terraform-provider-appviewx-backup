@@ -10,6 +10,8 @@ const (
 	MASTER_PAYLOAD                = "master_payload"
 	QUERY_PARAMS                  = "query_params"
 	DOWNLOAD_FILE_PATH            = "/tmp/"
+	DOWNLOAD_FILE_PATH_AUTOMATION = "download_file_path"
+
 
 	ACCEPT   = "Accept"
 	USERNAME = "username"
