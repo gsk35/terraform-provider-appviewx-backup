@@ -1,6 +1,9 @@
 package appviewx
 
 import (
+	"context"
+
+	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 
 	"terraform-provider-appviewx/appviewx/config"
@@ -32,14 +35,15 @@ func Provider() *schema.Provider {
 			},
 		},
 		ResourcesMap: map[string]*schema.Resource{
-			"appviewx_automation":  ResourceAutomationServer(),
-			"appviewx_certificate": ResourceCertificateServer(),
+			"appviewx_automation":           ResourceAutomationServer(),
+			"appviewx_create_certificate":   ResourceCertificateServer(),
+			"appviewx_download_certificate": ResourceDownloadCertificateServer(),
 		},
-		ConfigureFunc: providerConfigure,
+		ConfigureContextFunc: providerConfigure,
 	}
 }
 
-func providerConfigure(d *schema.ResourceData) (interface{}, error) {
+func providerConfigure(ctx context.Context, d *schema.ResourceData) (interface{}, diag.Diagnostics) {
 	appviewxEnvironment := config.AppViewXEnvironment{
 		AppViewXUserName:        d.Get(constants.APPVIEWX_USERNAME).(string),
 		AppViewXPassword:        d.Get(constants.APPVIEWX_PASSWORD).(string),
