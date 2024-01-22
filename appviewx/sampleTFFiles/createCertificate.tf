@@ -22,7 +22,7 @@ resource "appviewx_create_certificate" "sampletest"{
      	#if is_sync is true
      	certificate_download_path="/home/dhivya.v/external_projects/projects/terraform_provider/certs"
      	certificate_download_format="PEM"
-     	certificate_download_password="AppViewX@123"
+     	certificate_download_password=""
      	certificate_chain_required=true
      	
      	#Password field is only mandatory for the formats (PFX, P12, JKS)
