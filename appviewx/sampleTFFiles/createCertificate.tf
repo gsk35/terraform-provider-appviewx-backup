@@ -1,6 +1,6 @@
 provider "appviewx"{
-  	appviewx_username="admin"
-	appviewx_password="AppViewX@121"
+  	appviewx_username=""
+	appviewx_password=""
 	appviewx_environment_is_https=true
 	appviewx_environment_ip="192.168.150.192"
 	appviewx_environment_port="31443"
